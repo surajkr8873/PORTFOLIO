@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Suraj Kumar — Resume</title>
+<style>
+  @font-face { font-family: "Instrument Sans"; src: url("assets/fonts/instrument-sans-latin.woff2") format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Instrument Sans"; src: url("assets/fonts/instrument-sans-italic-latin.woff2") format("woff2"); font-weight: 400 700; font-style: italic; font-display: swap; }
+  @font-face { font-family: "Instrument Serif"; src: url("assets/fonts/instrument-serif-latin.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Instrument Serif"; src: url("assets/fonts/instrument-serif-italic-latin.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+  @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/jetbrains-mono-latin.woff2") format("woff2"); font-weight: 400 500; font-style: normal; font-display: swap; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 15mm 15mm 12mm;
+    background: #f6f4ee;
+    color: #181a1f;
+    font-family: "Instrument Sans", Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+  p { margin: 0; }
+  h1, h2, h3 { margin: 0; }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid rgba(24, 26, 31, 0.16);
+  }
+  .brand { font-size: 12pt; font-weight: 700; letter-spacing: 0.12em; line-height: 1; }
+  .brand span { color: #4357d8; }
+  .topbar-note { color: #7b7f88; font-family: "JetBrains Mono", monospace; font-size: 6pt; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 10mm;
+    padding: 9mm 0 8mm;
+  }
+  .kicker { color: #4357d8; font-family: "JetBrains Mono", monospace; font-size: 6.2pt; letter-spacing: 0.11em; text-transform: uppercase; }
+  h1 { margin-top: 2mm; font-size: 29pt; font-weight: 500; letter-spacing: -0.05em; line-height: 1; }
+  h1 em { font-family: "Instrument Serif", Georgia, serif; font-size: 1.16em; font-style: italic; font-weight: 400; letter-spacing: -0.03em; }
+  .hero-desc { max-width: 105mm; margin-top: 3mm; color: #5a5e66; font-size: 8.7pt; line-height: 1.65; }
+  .contact-card { width: 49mm; padding: 4mm; border: 1px solid rgba(24, 26, 31, 0.12); border-radius: 2.8mm; background: rgba(255, 255, 255, 0.45); }
+  .contact-label { margin-bottom: 1.6mm; color: #8a8e96; font-family: "JetBrains Mono", monospace; font-size: 5.5pt; letter-spacing: 0.09em; text-transform: uppercase; }
+  .contact-row { display: flex; align-items: flex-start; gap: 2mm; margin-top: 1.8mm; font-size: 7.7pt; line-height: 1.4; }
+  .contact-row:first-of-type { margin-top: 0; }
+  .contact-dot { width: 1.3mm; height: 1.3mm; flex: 0 0 auto; margin-top: 1.2mm; border-radius: 50%; background: #4357d8; }
+  .contact-row span:last-child { color: #33363d; }
+
+  .rule { height: 1px; background: rgba(24, 26, 31, 0.13); }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 56mm;
+    gap: 10mm;
+    padding-top: 7.5mm;
+  }
+
+  .section + .section { margin-top: 6.5mm; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 2.5mm;
+    margin-bottom: 3.2mm;
+    color: #777b84;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 5.9pt;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+  .section-title::after { height: 1px; flex: 1; background: rgba(24, 26, 31, 0.12); content: ""; }
+  .section-title strong { color: #4357d8; font-weight: 500; }
+  .section-copy { color: #545860; font-size: 8.6pt; line-height: 1.7; }
+
+  .education-list { display: flex; flex-direction: column; gap: 4mm; }
+  .education-item { display: grid; grid-template-columns: 21mm 1fr; gap: 4mm; }
+  .education-date { padding-top: 0.6mm; color: #7b7f88; font-family: "JetBrains Mono", monospace; font-size: 5.8pt; line-height: 1.5; }
+  .education-date.current { color: #4357d8; }
+  .education-item h3 { font-size: 9.2pt; font-weight: 600; letter-spacing: -0.01em; line-height: 1.4; }
+  .education-school { margin-top: 0.7mm; color: #5d6169; font-size: 7.9pt; line-height: 1.45; }
+  .education-meta { margin-top: 0.9mm; color: #8a8e96; font-size: 7.1pt; }
+  .score { display: inline-block; margin-left: 1.5mm; padding: 0.4mm 1.5mm; border: 1px solid rgba(24, 26, 31, 0.12); border-radius: 999px; color: #4f535b; font-family: "JetBrains Mono", monospace; font-size: 5.7pt; line-height: 1.4; }
+
+  .project { padding: 4mm; border: 1px solid rgba(24, 26, 31, 0.12); border-radius: 2.8mm; background: rgba(255, 255, 255, 0.38); }
+  .project + .project { margin-top: 3mm; }
+  .project-top { display: flex; align-items: baseline; justify-content: space-between; gap: 3mm; }
+  .project h3 { font-size: 9.2pt; font-weight: 600; letter-spacing: -0.01em; }
+  .project-status { color: #8a8e96; font-family: "JetBrains Mono", monospace; font-size: 5.4pt; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+  .project p { margin-top: 1.2mm; color: #5c6068; font-size: 7.8pt; line-height: 1.55; }
+  .tags { display: flex; flex-wrap: wrap; gap: 1.2mm; margin-top: 2.2mm; }
+  .tags span { padding: 0.5mm 1.6mm; border: 1px solid rgba(24, 26, 31, 0.11); border-radius: 999px; color: #6e727b; font-family: "JetBrains Mono", monospace; font-size: 5.4pt; line-height: 1.4; }
+
+  .sidebar { padding-left: 6mm; border-left: 1px solid rgba(24, 26, 31, 0.12); }
+  .sidebar .section + .section { margin-top: 7mm; }
+  .skill-group + .skill-group { margin-top: 3.5mm; }
+  .skill-label { color: #8a8e96; font-family: "JetBrains Mono", monospace; font-size: 5.5pt; letter-spacing: 0.06em; text-transform: uppercase; }
+  .skill-lines { margin-top: 1.3mm; }
+  .skill-line { display: flex; align-items: center; justify-content: space-between; gap: 2mm; padding: 1.25mm 0; border-bottom: 1px solid rgba(24, 26, 31, 0.08); font-size: 7.8pt; }
+  .skill-line span:first-child { color: #252830; font-weight: 500; }
+  .skill-line span:last-child { color: #8a8e96; font-family: "JetBrains Mono", monospace; font-size: 5.3pt; white-space: nowrap; }
+
+  .learning-list { display: flex; flex-direction: column; gap: 2.2mm; }
+  .learning-list div { display: flex; align-items: center; gap: 2mm; color: #52565e; font-size: 7.7pt; line-height: 1.4; }
+  .learning-list i { width: 1.2mm; height: 1.2mm; flex: 0 0 auto; border-radius: 50%; background: #4357d8; }
+
+  .aside-note { margin-top: 4mm; padding: 3.2mm; border-left: 1px solid #4357d8; color: #61656d; font-family: "Instrument Serif", Georgia, serif; font-size: 9.5pt; font-style: italic; line-height: 1.45; }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4mm;
+    margin-top: 8mm;
+    padding-top: 3mm;
+    border-top: 1px solid rgba(24, 26, 31, 0.16);
+    color: #8a8e96;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 5.5pt;
+    letter-spacing: 0.03em;
+  }
+  .footer strong { color: #4e525a; font-weight: 500; }
+
+  @media print {
+    @page { size: A4; margin: 0; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">SURAJ<span>.</span></div>
+      <div class="topbar-note">Aspiring Full-Stack Developer · 2026</div>
+    </div>
+
+    <div class="hero">
+      <div>
+        <p class="kicker">BCA Student · Developer in progress</p>
+        <h1>Suraj Kumar.<br><em>Building with purpose.</em></h1>
+        <p class="hero-desc">Aspiring full-stack software developer pursuing BCA at IGNOU. Building a strong foundation in programming, web development and problem-solving — with a focus on turning ideas into practical, useful software.</p>
+      </div>
+      <aside class="contact-card">
+        <p class="contact-label">Contact</p>
+        <div class="contact-row"><span class="contact-dot"></span><span>Patna, Bihar, India</span></div>
+        <div class="contact-row"><span class="contact-dot"></span><span>suraj99059kr@gmail.com</span></div>
+        <div class="contact-row"><span class="contact-dot"></span><span>GitHub &amp; LinkedIn via portfolio</span></div>
+      </aside>
+    </div>
+  </header>
+
+  <div class="rule"></div>
+
+  <main class="layout">
+    <div class="main-column">
+      <section class="section">
+        <h2 class="section-title"><strong>01</strong> Profile</h2>
+        <p class="section-copy">I'm currently developing my skills in Python, C++, HTML, CSS and JavaScript, while studying the core concepts behind good software. I enjoy learning new technologies and building projects that make ideas tangible. My goal is to become a skilled full-stack developer and create applications that are genuinely useful to people.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><strong>02</strong> Education</h2>
+        <div class="education-list">
+          <article class="education-item">
+            <div class="education-date current">2026 — Present</div>
+            <div>
+              <h3>Bachelor of Computer Applications (BCA)</h3>
+              <p class="education-school">Indira Gandhi National Open University (IGNOU)</p>
+              <p class="education-meta">Currently pursuing</p>
+            </div>
+          </article>
+          <article class="education-item">
+            <div class="education-date">2026</div>
+            <div>
+              <h3>Senior Secondary — Class XII</h3>
+              <p class="education-school">+2 High School, Daniawan, Patna</p>
+              <p class="education-meta">Completed <span class="score">67%</span></p>
+            </div>
+          </article>
+          <article class="education-item">
+            <div class="education-date">2024</div>
+            <div>
+              <h3>Secondary School — Class X</h3>
+              <p class="education-meta">Completed <span class="score">76.4%</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><strong>03</strong> Projects in progress</h2>
+        <article class="project">
+          <div class="project-top">
+            <h3>EduPath</h3>
+            <span class="project-status">In progress</span>
+          </div>
+          <p>An educational platform concept designed to provide students with a structured and user-friendly learning experience.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </article>
+        <article class="project">
+          <div class="project-top">
+            <h3>Personal Portfolio Website</h3>
+            <span class="project-status">In progress</span>
+          </div>
+          <p>A custom responsive portfolio built from scratch to present my skills, development journey, projects and professional profile.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </article>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <section class="section">
+        <h2 class="section-title"><strong>04</strong> Skills</h2>
+        <div class="skill-group">
+          <p class="skill-label">Languages</p>
+          <div class="skill-lines">
+            <div class="skill-line"><span>Python</span><span>Fundamentals</span></div>
+            <div class="skill-line"><span>C++</span><span>Fundamentals</span></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Web development</p>
+          <div class="skill-lines">
+            <div class="skill-line"><span>HTML</span><span>Foundations</span></div>
+            <div class="skill-line"><span>CSS</span><span>Foundations</span></div>
+            <div class="skill-line"><span>JavaScript</span><span>Learning</span></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Developer tools</p>
+          <div class="skill-lines">
+            <div class="skill-line"><span>Git</span><span>Learning</span></div>
+            <div class="skill-line"><span>GitHub</span><span>Learning</span></div>
+            <div class="skill-line"><span>Linux</span><span>Exploring</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><strong>05</strong> Learning</h2>
+        <div class="learning-list">
+          <div><i></i><span>Python programming</span></div>
+          <div><i></i><span>C++ programming</span></div>
+          <div><i></i><span>JavaScript</span></div>
+          <div><i></i><span>Frontend development</span></div>
+          <div><i></i><span>Problem solving</span></div>
+          <div><i></i><span>Object-oriented programming</span></div>
+        </div>
+        <p class="aside-note">“Learn deeply. Build often. Stay curious.”</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span><strong>Suraj Kumar</strong> · Aspiring Full-Stack Developer</span>
+    <span>Patna, Bihar, India</span>
+  </footer>
+</body>
+</html>
